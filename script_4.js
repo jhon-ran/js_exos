@@ -30,6 +30,7 @@ console.log("Voilà les entrepreneurs qui sont nés dans les années 70 :")
     };
   });
 }
+
 makeSeventies(entrepreneurs);
 
 // Sors une array qui contient le prénom et le nom des entrepreneurs
@@ -46,8 +47,35 @@ function fullName(entrepreneurs) {
 fullName(entrepreneurs);
 
 // Quel âge aurait chaque inventeur aujourd'hui ?
+function calcAge(entrepreneurs){
+  console.log("L'âge que chaque inventeur aurait aujourd'hui : ")
+  for(let index in entrepreneurs) {
+    console.log(entrepreneurs[index].first + " " + entrepreneurs[index].last, 2020 - entrepreneurs[index].year);
+    //console.log(entrepreneurs[ageAttribut]);
+  }
+}
 
-
+calcAge(entrepreneurs);
 
 // Trie les entrepreneurs par ordre alphabétique du nom de famille.
+function makeAlpha(entrepreneurs){
+  console.log("Voici les entrepreneurs triés par ordre alphabétique du nom de famille :")
 
+  let lastName = [];
+  for(let index in entrepreneurs) {
+      let tmp = entrepreneurs[index].last + " " + entrepreneurs[index].first;
+      lastName.push(tmp);
+  }
+
+  lastName.sort();
+  let name = [];
+  for(let index in lastName) {
+  
+      name = lastName[index].split(' ');
+  
+      console.log(name[1] + " " + name[0]);
+  }
+
+}
+
+makeAlpha(entrepreneurs);
