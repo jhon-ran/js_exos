@@ -18,7 +18,7 @@ let option = prompt(
 
 function translateARN(acideAmine){
 
-  acideAmineArray = acideAmine.toUpperCase().match(/.{1,3}/g);
+  acideAmineArray = acideAmine.match(/.{1,3}/g);
   console.log(acideAmineArray);
 
   let convertAcide = [];
