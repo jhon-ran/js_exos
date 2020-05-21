@@ -21,6 +21,19 @@ const entrepreneurs = [
   { first: 'Peter', last: 'Thiel', year: 1967 }
 ];
 
+// Options de script
+let option = prompt(
+  "Bienvenu dans ce super programme! Choisi une un script en tapant son numéro : \n" +
+  "\n" +
+  "  1 - Filtre dans la liste des entrepreneurs qui sont nés dans les années 70. \n" +
+  "  2 - Array des prénoms et noms des entrepreneurs. \n" +
+  "  3 - Connaître l'âge qu'aurait chaque inventeur aujourd'hui. \n" +
+  "  4 - Trier les entrepreneurs par ordre alphabétique du nom de famille. \n" +
+  "\n");
+
+
+
+
 //Filtre dans cette liste les entrepreneurs qui sont nés dans les années 70
 function makeSeventies(entrepreneurs) {
 console.log("Voilà les entrepreneurs qui sont nés dans les années 70 :")
@@ -31,7 +44,6 @@ console.log("Voilà les entrepreneurs qui sont nés dans les années 70 :")
   });
 }
 
-makeSeventies(entrepreneurs);
 
 // Sors une array qui contient le prénom et le nom des entrepreneurs
 function fullName(entrepreneurs) {
@@ -44,7 +56,7 @@ function fullName(entrepreneurs) {
   }
 }
 
-fullName(entrepreneurs);
+
 
 // Quel âge aurait chaque inventeur aujourd'hui ?
 function calcAge(entrepreneurs){
@@ -55,7 +67,7 @@ function calcAge(entrepreneurs){
   }
 }
 
-calcAge(entrepreneurs);
+
 
 // Trie les entrepreneurs par ordre alphabétique du nom de famille.
 function makeAlpha(entrepreneurs){
@@ -78,4 +90,23 @@ function makeAlpha(entrepreneurs){
 
 }
 
-makeAlpha(entrepreneurs);
+
+
+
+// Menu de scripts
+switch (option) {
+  case '1':
+    makeSeventies(entrepreneurs);
+    break;
+  case '2':
+    fullName(entrepreneurs);
+    break;
+  case '3':
+    calcAge(entrepreneurs);
+    break;
+  case '4':
+    makeAlpha(entrepreneurs);
+    break;
+  default:
+    console.log("Option invalide! Tapez 1, 2, 3 ou 4.");
+}
