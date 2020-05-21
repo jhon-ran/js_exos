@@ -19,7 +19,8 @@ let option = prompt(
 function translateARN(acideAmine){
   //if user input change to acideAmineArray = acideAmine.toUpperCase().match(/.{1,3}/g);
   acideAmineArray = acideAmine.match(/.{1,3}/g);
-  console.log(acideAmineArray);
+  console.log("Tu a chosi cette chaîne ARN : ")
+  console.log(acideAmineArray.join('-'));
 
   let convertAcide = [];
 
@@ -41,7 +42,8 @@ function translateARN(acideAmine){
     };
   });
 
-  console.log(convertAcide);
+  console.log("Voilà ta chaîne transformé en acide aminé :"); 
+  console.log(convertAcide.join('-'));
 
 }
 
