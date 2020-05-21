@@ -17,10 +17,30 @@ const books = [
 
 
 //Est-ce que tous les livres ont été au moins empruntés une fois ?
+function isRented(books){
+  let booksRentedArray = []
 
+  books.forEach(item => {
+    booksRentedArray.push(item.rented);
+  });
+
+  function isRentedOnce(element) {
+    return element > 0;
+  }
+
+  if (booksRentedArray.every(isRentedOnce)) {
+    console.log("Les livres ont tous étaient empruntés au moins une fois !");
+  } else {
+    console.log("Ils n'ont pas tous étaient empruntés");
+  };
+}
+
+isRented(books);
 
 
 //Quel est livre le plus emprunté ?
+
+
 //Quel est le livre le moins emprunté ?
 //Trouve le livre avec l'ID: 873495 ;
 //Supprime le livre avec l'ID: 133712 ;
