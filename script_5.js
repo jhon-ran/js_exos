@@ -15,6 +15,17 @@ const books = [
   { title: 'Guerre et Paix', id: 748147, rented: 19 }
 ];
 
+// Menu
+let option = prompt(
+  "Choisisez un script : \n" +
+  "\n" +
+  "  1 - Est-ce que tous les livres ont été au moins empruntés une fois ? \n" +
+  "  2 - Le livre le plus emprunté \n" +
+  "  3 - Le livre le moins emprunté \n" +
+  "  4 - Show le livre avec l'ID: 873495. \n" +
+  "  5 - Supprime le livre avec l'ID: 133712. \n" +
+  "  6 - LIste des livres par ordre alphabétique. \n" +
+  "\n");
 
 //Est-ce que tous les livres ont été au moins empruntés une fois ?
 function isRented(books){
@@ -35,8 +46,6 @@ function isRented(books){
   };
 }
 
-isRented(books);
-
 
 //Quel est livre le plus emprunté ?
 function mostRead(books){
@@ -53,10 +62,9 @@ function mostRead(books){
 
 }
 
-mostRead(books);
+
 
 //Quel est le livre le moins emprunté ?
-
 function lessRented(books) {
   console.log("Le livre le moins emprunté :");
   let booksRentedArray = books.sort(function (a, b) {
@@ -67,17 +75,16 @@ function lessRented(books) {
   console.log(textToReturn);
 }
 
-lessRented(books);
+
 
 //Trouve le livre avec l'ID: 873495 ;
-
 function findBook(books){
   let findBook = books.find(item => item.id == 873495);
   console.log("Le livre avec l'ID: 873495 est : " + findBook.title);
 
 }
 
-findBook(books)
+
 
 //Supprime le livre avec l'ID: 133712 
 function deleteBook(books){
@@ -89,7 +96,7 @@ function deleteBook(books){
   
 }
 
-deleteBook(books);
+
 
 //Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé)
 function sortBook(books) {
@@ -102,4 +109,29 @@ function sortBook(books) {
   console.log(booksNameArray.sort());
 }
 
-sortBook(books)
+
+
+
+// Menu de scripts
+switch (option) {
+  case '1':
+    isRented(books);
+    break;
+  case '2':
+    mostRead(books);
+    break;
+  case '3':
+    lessRented(books);
+    break;
+  case '4':
+    findBook(books)
+    break;
+  case '5':
+    deleteBook(books);
+    break;
+  case '6':
+    sortBook(books)
+    break;
+  default:
+    console.log("Option invalide! Tapez 1, 2, 3, 4, 5 ou 6.");
+}
